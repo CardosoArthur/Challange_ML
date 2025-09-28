@@ -52,3 +52,39 @@ Este arquivo contém as métricas de centralidade de cada empresa na rede de tra
 | `Centralidade_de_Pagamentos` | Mede a importância de uma empresa como "origem" de pagamentos na rede. | Calculada usando `out_degree_centrality` da biblioteca `networkx`. |
 | `Centralidade_de_Ponte` | Mede a frequência com que uma empresa atua como uma "ponte" ou intermediária no caminho mais curto entre outras duas empresas. | Calculada usando `betweenness_centrality` da biblioteca `networkx`. |
 | `Grupo_Empresas` | Identifica a comunidade ou cluster de negócios à qual a empresa pertence, com base na densidade de suas interconexões. | Detectada usando o algoritmo de Louvain (`community_louvain`). |
+
+---
+
+## Dashboard Interativo Streamlit
+
+Um dashboard interativo foi desenvolvido utilizando Streamlit, Plotly e PyVis para replicar e aprimorar a visualização dos dados gerados por este projeto. Ele oferece uma interface amigável para explorar o momento de vida das empresas, suas transações e a rede de relacionamentos.
+
+### Funcionalidades Principais:
+
+*   **Layout Personalizado:** Tema vermelho (Santander/FIAP) com cards de KPI em gradiente.
+*   **Filtros Globais:** Permite filtrar dados por setor, momento da empresa e período (mês/ano).
+*   **6 Abas de Análise:**
+    *   **Visão Geral:** Panorama do ecossistema, empresas por momento, fluxo de caixa e top setores.
+    *   **Início, Maturidade, Expansão, Declínio:** Análises detalhadas para cada momento de vida da empresa.
+    *   **Detalhamento:** Visualização individual de empresas, incluindo KPIs, timeline de transações e uma rede interativa de pagamentos/recebimentos (PyVis).
+*   **Visualizações Ricas:** Gráficos interativos com Plotly.
+*   **Download de Dados:** Opção para baixar os dados filtrados em formato CSV.
+
+### Como Executar o Dashboard:
+
+1.  **Certifique-se de ter o Python 3.10+ instalado.**
+2.  **Navegue até a pasta do projeto** (`C:\Projetos\Challange_Santander\Challange_ML`) no seu terminal.
+3.  **Instale as dependências** listadas no arquivo `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Execute o aplicativo Streamlit:**
+    ```bash
+    streamlit run app.py
+    ```
+    Uma nova aba será aberta automaticamente no seu navegador com o dashboard.
+
+### Arquivos do Dashboard:
+
+*   `app.py`: O código-fonte principal do aplicativo Streamlit.
+*   `requirements.txt`: Lista de todas as bibliotecas Python necessárias para o dashboard.
